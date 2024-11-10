@@ -45,7 +45,7 @@ Also done email reading using Rest Assured.
 ![image](https://github.com/user-attachments/assets/ae1bac8b-197e-470f-aafd-def4461ced64)
 
 ### Excel Test Case Report
-- [Click Here To See The Test Case Excel Report]
+- [Click Here To See The Test Case Excel Report](https://docs.google.com/spreadsheets/d/1r-2_TqiQ_RXdBcFvSuvhAYKNsxrNkuxZmJHiVHEvxko/edit?usp=sharing)
 
 ### Output Video Link :
 -  [Click Here To see the output video of Smoke Suite Automation Script ](https://drive.google.com/file/d/12um3Q8S9yi5vAdu84HVxBL7EbaR8YfeV/view?usp=sharing)
