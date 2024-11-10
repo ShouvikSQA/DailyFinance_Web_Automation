@@ -112,25 +112,6 @@ public class UserProfileTestRunner extends Setup {
 
     }
 
-   // @Test(priority = 6, description = "User can login with Updated Email" )
-    public void userLoginUpdatedEmail() throws ParseException, IOException {
-
-        String email= Utils.getLatestUserProperty("email");
-        String password= Utils.getLatestUserProperty("password");
-        driver.get("https://dailyfinance.roadtocareer.net/login");
-        loginPage = new LoginPage(driver);
-        loginPage.doLogin(email,password);
-        String expectedMsg = "User Daily Costs";
-
-        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(50));
-        wait.until(ExpectedConditions.visibilityOf(loginPage.dashboardMsg));
-
-        String actualMsg = loginPage.dashboardMsg.getText();
-        Assert.assertTrue(actualMsg.contains(expectedMsg));
-        loginPage.doLogout();
-
-
-    }
 
 
 
