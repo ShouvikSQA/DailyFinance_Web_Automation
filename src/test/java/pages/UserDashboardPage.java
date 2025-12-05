@@ -18,22 +18,24 @@ public class UserDashboardPage {
 
 
     @FindBy( xpath = "//div[@class='summary']/span")
-    public List<WebElement> rowCount;
+    private List<WebElement> rowCount;
 
     @FindBy(tagName = "tbody")
-    public WebElement table;
+    private WebElement table;
 
-    @FindBy(className = "add-cost-button")
-    public WebElement btnAddCost;
+
 
     @FindBy( xpath = "//div[@class='summary']/span")
-    public List<WebElement> txtCost;
+    private List<WebElement> txtCost;
 
     @FindBy( className = "search-input")
-    public WebElement txtSearch;
+    private WebElement txtSearch;
 
     @FindBy( tagName = "tbody")
-    public WebElement tableBody;
+    private WebElement tableBody;
+
+    @FindBy(className = "add-cost-button")
+    private WebElement btnAddCost;
 
 
     public UserDashboardPage(WebDriver driver){

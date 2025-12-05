@@ -9,6 +9,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -109,10 +110,10 @@ public class Utils {
 
     public static void clearLoginCreds(WebDriver driver){
         LoginPage loginPage =new LoginPage(driver);
-        loginPage.txtEmail.sendKeys(Keys.CONTROL,"a");
-        loginPage.txtEmail.sendKeys(Keys.BACK_SPACE);
-        loginPage.txtPassword.sendKeys(Keys.CONTROL,"a");
-        loginPage.txtPassword.sendKeys(Keys.BACK_SPACE);
+        driver.findElement(By.id("email")).sendKeys(Keys.CONTROL,"a");
+        driver.findElement(By.id("email")).sendKeys(Keys.BACK_SPACE);
+        driver.findElement(By.id("password")).sendKeys(Keys.CONTROL,"a");
+        driver.findElement(By.id("password")).sendKeys(Keys.BACK_SPACE);
     }
 
 

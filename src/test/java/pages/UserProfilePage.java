@@ -18,13 +18,13 @@ public class UserProfilePage {
       WebDriver driver;
 
       @FindBy(tagName = "button")
-      public List<WebElement> buttons;
+      private List<WebElement> buttons;
 
       @FindBy(css = "input[name='email']")
-      public WebElement txtEmail;
+      private WebElement txtEmail;
 
       @FindBy(className = "upload-input")
-      public WebElement imgFileSelect;
+      private WebElement imgFileSelect;
 
       public UserProfilePage(WebDriver driver){
             PageFactory.initElements(driver,this);

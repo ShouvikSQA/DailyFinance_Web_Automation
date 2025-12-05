@@ -62,7 +62,7 @@ public class UserProfileTestRunner extends Setup {
 
         loginPage.doLogin(email,password);
         String expectedMsg = "User Daily Costs";
-        String actualMsg = loginPage.dashboardMsg.getText();
+        String actualMsg = driver.findElement(By.tagName("h2")).getText();
         Assert.assertTrue(actualMsg.contains(expectedMsg));
 
 
@@ -72,8 +72,8 @@ public class UserProfileTestRunner extends Setup {
     public  void updateUserPhoto() throws InterruptedException, IOException, ParseException {
         //driver.get("https://dailyfinance.roadtocareer.net/user");
         loginPage = new LoginPage(driver);
-        loginPage.btnProfileIcon.click();
-        loginPage.btnProfileMenuItems.get(0).click();
+        driver.findElement(By.cssSelector("[data-testid=AccountCircleIcon]")).click();
+        driver.findElements(By.cssSelector("[role=menuitem]")).get(0).click();
 
 
         UserProfilePage userProfilePage = new UserProfilePage(driver);
@@ -94,7 +94,7 @@ public class UserProfileTestRunner extends Setup {
         loginPage.doLogout();
 
         WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(40));
-        wait.until(ExpectedConditions.elementToBeClickable(loginPage.btnLogin));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("button[type='submit']"))));
 
     }
 

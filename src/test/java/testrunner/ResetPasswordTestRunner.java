@@ -5,6 +5,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import pages.ResetPasswordPage;
 
@@ -22,7 +23,7 @@ public class ResetPasswordTestRunner extends Setup {
     @Test(priority = 1 , description = "Reset New Password")
     public void resetPassword() throws IOException, ParseException, ConfigurationException, org.apache.commons.configuration.ConfigurationException, InterruptedException {
         resetPass = new ResetPasswordPage(driver);
-        resetPass.linkResetPassword.click();
+        driver.findElement(By.cssSelector("a[href='/forgot-password']")).click();
 
         JSONParser parser=new JSONParser();
         JSONArray jsonArray= (JSONArray) parser.parse(new FileReader("./src/test/resources/users.json"));
@@ -44,7 +45,7 @@ public class ResetPasswordTestRunner extends Setup {
     @Test(priority = 3 , description = "Reset New Password With Unregistered Email")
     public void resetPassUnregisteredEmail() throws IOException, ParseException, ConfigurationException, org.apache.commons.configuration.ConfigurationException, InterruptedException {
         driver.get("https://dailyfinance.roadtocareer.net/login");
-        resetPass.linkResetPassword.click();
+        driver.findElement(By.cssSelector("a[href='/forgot-password']")).click();
         resetPass.sendUnregisteredEmail("shouvik9292+50000@gmail.com");
 
     }
@@ -53,7 +54,7 @@ public class ResetPasswordTestRunner extends Setup {
     public void resetMismatchPass() throws IOException, ParseException, ConfigurationException, org.apache.commons.configuration.ConfigurationException, InterruptedException {
         driver.get("https://dailyfinance.roadtocareer.net/login");
         resetPass = new ResetPasswordPage(driver);
-        resetPass.linkResetPassword.click();
+        driver.findElement(By.cssSelector("a[href='/forgot-password']")).click();
 
          resetPass.resetPassMismatch(userEmail);
 

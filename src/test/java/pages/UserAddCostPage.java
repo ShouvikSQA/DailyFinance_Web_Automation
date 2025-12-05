@@ -15,22 +15,24 @@ public class UserAddCostPage {
 
     WebDriver driver;
 
-    @FindBy(className = "add-cost-button")
-    public WebElement btnAddCost;
+
     @FindBy(css = "button[type='button']")
-    public List<WebElement> btnIncreaseQuantity;
+    private List<WebElement> btnIncreaseQuantity;
     @FindBy(id = "itemName")
-    WebElement txtItemName;
+    private WebElement txtItemName;
     @FindBy(id="amount")
-    WebElement txtAmount;
+    private WebElement txtAmount;
     @FindBy(id = "purchaseDate")
-    WebElement dateElement;
+    private WebElement dateElement;
     @FindBy(id = "remarks")
-    WebElement txtRemark;
+    private WebElement txtRemark;
     @FindBy(id = "month")
-    WebElement dropDownMonths;
+    private WebElement dropDownMonths;
     @FindBy(css = "[type=submit]")
-    WebElement btnSubmit;
+    private WebElement btnSubmit;
+    @FindBy(className = "add-cost-button")
+    private WebElement btnAddCost;
+
     public UserAddCostPage(WebDriver driver){
         PageFactory.initElements(driver,this);
         this.driver = driver;

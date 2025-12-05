@@ -16,18 +16,19 @@ public class ResetPasswordPage {
 
     public WebDriver driver;
 
-    @FindBy(css = "a[href='/forgot-password']")
-    public WebElement linkResetPassword;
+
     @FindBy(id=":r0:")
-    public WebElement txtEmail;
+    private WebElement txtEmail;
     @FindBy(css = "button[type='submit']")
-    public WebElement btnSendReset;
+    private WebElement btnSendReset;
     @FindBy( tagName = "p")
-    public WebElement txtInformation;
+    private WebElement txtInformation;
     @FindBy(tagName = "input")
-    public List<WebElement> txtPasswordField;
+    private List<WebElement> txtPasswordField;
     @FindBy(tagName = "button")
-    public WebElement btnResetPass;
+    private WebElement btnResetPass;
+    @FindBy(css = "a[href='/forgot-password']")
+    private WebElement linkResetPassword;
 
     public ResetPasswordPage(WebDriver driver){
         PageFactory.initElements(driver,this);

@@ -9,17 +9,17 @@ import java.util.List;
 
 public class LoginPage {
     @FindBy(id="email")
-    public WebElement txtEmail;
+    private WebElement txtEmail;
     @FindBy(id="password")
-    public WebElement txtPassword;
+    private WebElement txtPassword;
     @FindBy( css = "button[type='submit']")
-    public WebElement btnLogin;
+    private WebElement btnLogin;
     @FindBy(css = "[data-testid=AccountCircleIcon]")
-    public WebElement btnProfileIcon;
+    private WebElement btnProfileIcon;
     @FindBy(css = "[role=menuitem]")
-    public List<WebElement> btnProfileMenuItems;
+    private List<WebElement> btnProfileMenuItems;
     @FindBy(tagName = "h2")
-    public WebElement dashboardMsg;
+    private WebElement dashboardMsg;
 
     public LoginPage(WebDriver driver){
         PageFactory.initElements(driver,this);

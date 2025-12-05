@@ -55,7 +55,7 @@ public class AdminLoginTestRunner extends Setup {
             loginPage.doLogin("admin@test.com","admin123");
         }
 
-        String headerActual= loginPage.dashboardMsg.getText();
+        String headerActual= driver.findElement(By.tagName("h2")).getText();
         String headerExpected="Admin Dashboard";
         Assert.assertTrue(headerActual.contains(headerExpected));
         Utils.getToken(driver);

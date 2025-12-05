@@ -12,9 +12,9 @@ import java.util.List;
 public class AdminDashboardPage {
 
     @FindBy(tagName="tbody")
-    WebElement table;
+    private WebElement table;
     @FindBy(className = "search-box")
-    WebElement searchBox;
+    private WebElement searchBox;
 
     public AdminDashboardPage(WebDriver driver){
         PageFactory.initElements(driver,this);

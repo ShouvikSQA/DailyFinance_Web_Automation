@@ -11,25 +11,25 @@ import java.util.List;
 public class RegistrationPage {
   //  @FindBy(tagName = "a")
     @FindBy(css = "a[href='/register']")
-    public WebElement btnRegister;
+    private WebElement btnRegister;
     @FindBy(id = "firstName")
-    WebElement txtFirstname;
+    private WebElement txtFirstname;
     @FindBy(id = "lastName")
-    WebElement txtLastname;
+    private WebElement txtLastname;
     @FindBy(id="email")
-    WebElement txtEmail;
+    private WebElement txtEmail;
     @FindBy(id="password")
-    WebElement txtPassword;
+    private WebElement txtPassword;
     @FindBy(id="phoneNumber")
-    WebElement txtPhoneNumber;
+    private WebElement txtPhoneNumber;
     @FindBy(id="address")
-    WebElement txtAddress;
+    private WebElement txtAddress;
     @FindBy(css = "[type=radio]")
-    List<WebElement> rbGender;
+    private List<WebElement> rbGender;
     @FindBy(css = "[type=checkbox]")
-    WebElement chkAcceptTerms;
+    private WebElement chkAcceptTerms;
     @FindBy(id="register")
-    public WebElement btnSubmitReg;
+    private WebElement btnSubmitReg;
 
     public RegistrationPage(WebDriver driver){
         PageFactory.initElements(driver,this);

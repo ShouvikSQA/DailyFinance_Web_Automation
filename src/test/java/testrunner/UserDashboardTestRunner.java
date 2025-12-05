@@ -4,6 +4,7 @@ package testrunner;
 import config.AddCostDataSet;
 import config.Setup;
 import org.json.simple.parser.ParseException;
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
@@ -28,7 +29,7 @@ public class UserDashboardTestRunner extends Setup {
 
         loginPage.doLogin(email,password);
         String expectedMsg = "User Daily Costs";
-        String actualMsg = loginPage.dashboardMsg.getText();
+        String actualMsg = driver.findElement(By.tagName("h2")).getText();
         Assert.assertTrue(actualMsg.contains(expectedMsg));
 
     }
@@ -37,7 +38,7 @@ public class UserDashboardTestRunner extends Setup {
     public void addCost(String name,String amount,int quantity,String date,String month,String remark) throws InterruptedException {
 
         UserAddCostPage addCostPage=new UserAddCostPage(driver);
-        addCostPage.btnAddCost.click();
+        driver.findElement(By.className("add-cost-button")).click();
 
         addCostPage.addCost(name,amount,quantity,date, month ,remark);
 

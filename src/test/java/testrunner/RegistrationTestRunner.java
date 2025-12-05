@@ -21,11 +21,13 @@ import java.time.Duration;
 
 public class RegistrationTestRunner extends Setup {
 
+
+
     @Test(priority = 6, description = "User can not register by using already registered")
     public void userRegByUsedEmail() throws InterruptedException, IOException, ParseException, ConfigurationException, org.apache.commons.configuration.ConfigurationException {
         RegistrationPage userReg=new RegistrationPage(driver);
         Faker faker=new Faker();
-        userReg.btnRegister.click();
+        driver.findElement(By.cssSelector("a[href='/register']")).click();
         String firstname=faker.name().firstName();
         String lastname=faker.name().lastName();
         //String email=faker.internet().emailAddress();
@@ -53,7 +55,7 @@ public class RegistrationTestRunner extends Setup {
     public void userRegByAllFields() throws InterruptedException, IOException, ParseException, ConfigurationException, org.apache.commons.configuration.ConfigurationException {
         RegistrationPage userReg=new RegistrationPage(driver);
         Faker faker=new Faker();
-        userReg.btnRegister.click();
+        driver.findElement(By.cssSelector("a[href='/register']")).click();
         String firstname=faker.name().firstName();
         String lastname=faker.name().lastName();
         //String email=faker.internet().emailAddress();
@@ -87,14 +89,14 @@ public class RegistrationTestRunner extends Setup {
         // Waiting for register test Link to be loaded and clickable properly
        // Thread.sleep(3000);
         WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(40));
-        wait.until(ExpectedConditions.elementToBeClickable(userReg.btnRegister));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("a[href='/register']"))));
     }
     @Test(priority = 4, description = "User can register by providing only mandatory info")
     public void userRegByMandatoryFields() throws IOException, ParseException, InterruptedException, ConfigurationException, org.apache.commons.configuration.ConfigurationException {
         RegistrationPage userReg=new RegistrationPage(driver);
         Faker faker=new Faker();
 
-        userReg.btnRegister.click();
+        driver.findElement(By.cssSelector("a[href='/register']")).click();
         String firstname=faker.name().firstName();
         //String email=faker.internet().emailAddress();
         String email = Utils.geneateRandomEmail();
@@ -122,14 +124,14 @@ public class RegistrationTestRunner extends Setup {
         // Waiting for register text Link to be loaded and clickable properly
         //Thread.sleep(3000);
         WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(40));
-        wait.until(ExpectedConditions.elementToBeClickable(userReg.btnRegister));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("a[href='/register']"))));
     }
 
    @Test(priority = 1, description = "User can not register by missing any one mandatory info")
     public void userRegMissingAnyMandatoryField() throws IOException, ParseException, InterruptedException {
         RegistrationPage userReg=new RegistrationPage(driver);
         Faker faker=new Faker();
-        userReg.btnRegister.click();
+       driver.findElement(By.cssSelector("a[href='/register']")).click();
         String firstname=faker.name().firstName();
        // String email=faker.internet().emailAddress();
         String email = Utils.geneateRandomEmail();
@@ -150,7 +152,7 @@ public class RegistrationTestRunner extends Setup {
         // Waiting for register button to be loaded and clickable properly
         // Thread.sleep(3000);
         WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(40));
-        wait.until(ExpectedConditions.elementToBeClickable(userReg.btnRegister));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("a[href='/register']"))));
 
 
 
@@ -161,7 +163,7 @@ public class RegistrationTestRunner extends Setup {
     public void userRegInvalidPhoneNumber() throws IOException, ParseException, InterruptedException {
         RegistrationPage userReg=new RegistrationPage(driver);
         Faker faker=new Faker();
-        userReg.btnRegister.click();
+        driver.findElement(By.cssSelector("a[href='/register']")).click();
         String firstname=faker.name().firstName();
 
         String email = "xyzab"+Utils.generateRandomNumber(1000,9999)+"@gmail.com";
@@ -179,7 +181,7 @@ public class RegistrationTestRunner extends Setup {
 
 
         WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(40));
-        wait.until(ExpectedConditions.elementToBeClickable(userReg.btnRegister));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("a[href='/register']"))));
 
 
 
@@ -191,7 +193,7 @@ public class RegistrationTestRunner extends Setup {
     public void userRegWithInvalidEmail() throws IOException, ParseException, InterruptedException {
         RegistrationPage userReg=new RegistrationPage(driver);
         Faker faker=new Faker();
-        userReg.btnRegister.click();
+        driver.findElement(By.cssSelector("a[href='/register']")).click();
         String firstname=faker.name().firstName();
         // String email=faker.internet().emailAddress();
         String email = "abcdefg";
@@ -212,7 +214,7 @@ public class RegistrationTestRunner extends Setup {
         // Waiting for register button to be loaded and clickable properly
         // Thread.sleep(3000);
         WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(40));
-        wait.until(ExpectedConditions.elementToBeClickable(userReg.btnRegister));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("a[href='/register']"))));
 
 
 
