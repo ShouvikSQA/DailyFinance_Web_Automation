@@ -27,6 +27,7 @@ public class LoginPage {
     public void doLogin(String email, String password){
         txtEmail.sendKeys(email);
         txtPassword.sendKeys(password);
+        
         btnLogin.click();
 
     }
